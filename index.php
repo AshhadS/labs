@@ -1,0 +1,920 @@
+<?php
+header('X-Content-Type-Options: nosniff');
+header('Referrer-Policy: strict-origin-when-cross-origin');
+?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ashhad Sameer is a Kuwait-based software and AI developer building full-stack web applications, automation, agentic AI systems, and digital products.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#f4f7f8">
+  <link rel="canonical" href="http://ashhadslabs.com/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/assets/favicon.ico" sizes="any">
+  <title>Ashhad Sameer | Kuwait Software &amp; AI Developer</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Ashhad Sameer",
+    "url": "http://ashhadslabs.com/",
+    "author": {
+      "@type": "Person",
+      "@id": "http://ashhadslabs.com/#ashhad-sameer",
+      "name": "Ashhad Sameer",
+      "jobTitle": "Software and AI Developer",
+      "url": "http://ashhadslabs.com/dev/",
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Kuwait"
+      },
+      "knowsAbout": [
+        "Full-stack software development",
+        "Artificial intelligence",
+        "Agentic AI",
+        "Web application development",
+        "Technical leadership"
+      ],
+      "sameAs": [
+        "https://github.com/AshhadS",
+        "https://www.linkedin.com/in/dev-ashhad/"
+      ]
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LKTN65059"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3LKTN65059');
+  </script>
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7f8;
+      --paper: #ffffff;
+      --ink: #17202b;
+      --muted: #657080;
+      --line: #d8e1e7;
+      --blue: #0f1e89;
+      --cyan: #0097ce;
+      --mint: #34c6a8;
+      --lime: #d7f75b;
+      --coral: #ff7a59;
+      --terminal: #151923;
+      --terminal-muted: #a4b0c2;
+      --shadow: 0 20px 60px rgba(34, 55, 76, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      background:
+        linear-gradient(rgba(15, 30, 137, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 30, 137, 0.035) 1px, transparent 1px),
+        var(--bg);
+      background-size: 28px 28px;
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      border-bottom: 1px solid rgba(216, 225, 231, 0.9);
+      background: rgba(244, 247, 248, 0.9);
+      backdrop-filter: blur(14px);
+    }
+
+    .topbar-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      font-weight: 850;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 9px;
+      box-shadow: 4px 4px 0 var(--ink);
+    }
+
+    .brand-label {
+      display: grid;
+      line-height: 1.15;
+    }
+
+    .brand-label small {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .system-state {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 750;
+    }
+
+    .pulse {
+      width: 10px;
+      height: 10px;
+      border: 2px solid var(--paper);
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 0 3px rgba(52, 198, 168, 0.22);
+    }
+
+    main {
+      padding: 64px 0 44px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(480px, 1.08fr);
+      align-items: center;
+      gap: clamp(44px, 7vw, 92px);
+      min-height: 600px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 28px;
+      height: 4px;
+      border-radius: 99px;
+      background: var(--coral);
+      content: "";
+    }
+
+    h1 {
+      max-width: 690px;
+      margin: 0;
+      font-size: clamp(3.1rem, 6vw, 6rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .accent {
+      color: var(--blue);
+    }
+
+    .intro {
+      max-width: 620px;
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 2px solid var(--ink);
+      border-radius: 7px;
+      padding: 10px 17px;
+      font-weight: 850;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .button:hover {
+      transform: translate(-2px, -2px);
+    }
+
+    .button.primary {
+      background: var(--lime);
+      box-shadow: 5px 5px 0 var(--ink);
+    }
+
+    .button.primary:hover {
+      box-shadow: 7px 7px 0 var(--ink);
+    }
+
+    .button.secondary {
+      background: var(--paper);
+    }
+
+    .shortcut-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 27px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    kbd {
+      min-width: 25px;
+      display: inline-grid;
+      place-items: center;
+      margin-right: 5px;
+      border: 1px solid #bac6ce;
+      border-bottom-width: 3px;
+      border-radius: 5px;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 0.72rem;
+    }
+
+    .terminal {
+      overflow: hidden;
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      background: var(--terminal);
+      box-shadow: 12px 12px 0 var(--cyan);
+      color: #eef4f8;
+    }
+
+    .terminal-bar {
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid #303746;
+      background: #202632;
+      padding: 10px 14px;
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .terminal-dots span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .terminal-dots span:nth-child(1) { background: var(--coral); }
+    .terminal-dots span:nth-child(2) { background: #ffd166; }
+    .terminal-dots span:nth-child(3) { background: var(--mint); }
+
+    .terminal-title {
+      color: var(--terminal-muted);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.75rem;
+    }
+
+    .terminal-screen {
+      min-height: 326px;
+      max-height: 326px;
+      overflow-y: auto;
+      padding: 23px;
+      scrollbar-color: #4a5365 transparent;
+      scrollbar-width: thin;
+    }
+
+    .terminal-screen p {
+      margin: 0 0 9px;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.88rem;
+      line-height: 1.65;
+      white-space: pre-wrap;
+    }
+
+    .terminal-screen .muted { color: var(--terminal-muted); }
+    .terminal-screen .success { color: var(--lime); }
+    .terminal-screen .info { color: #69d7ff; }
+    .terminal-screen .error { color: #ff9b82; }
+
+    .command-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid #303746;
+      padding: 14px 18px;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+
+    .prompt {
+      color: var(--lime);
+      font-size: 0.86rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    #command {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: #ffffff;
+      caret-color: var(--coral);
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+
+    #command::placeholder {
+      color: #778295;
+    }
+
+    .command-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-top: 1px solid #303746;
+      padding: 12px 18px 16px;
+    }
+
+    .command-chip {
+      border: 1px solid #465064;
+      border-radius: 5px;
+      background: #252c39;
+      color: #cbd5df;
+      padding: 5px 9px;
+      cursor: pointer;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.72rem;
+    }
+
+    .command-chip:hover,
+    .command-chip:focus-visible {
+      border-color: var(--cyan);
+      color: #ffffff;
+    }
+
+    .routes {
+      margin-top: 70px;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: 1.3fr repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .route-card {
+      min-height: 154px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 19px;
+      transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .route-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .route-card.primary-route {
+      border: 2px solid var(--ink);
+      background: #f8fbdc;
+    }
+
+    .route-path {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--blue);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .route-arrow {
+      font-family: inherit;
+      font-size: 1.1rem;
+    }
+
+    .route-card strong {
+      display: block;
+      margin-top: 19px;
+      font-size: 1.05rem;
+    }
+
+    .route-card small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .system-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      margin-top: 36px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--line);
+    }
+
+    .system-item {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 16px 18px;
+    }
+
+    .system-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .system-item strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.94rem;
+    }
+
+    footer {
+      padding: 38px 0 30px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    :focus-visible {
+      outline: 3px solid rgba(0, 151, 206, 0.45);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 1000px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-copy {
+        max-width: 760px;
+      }
+
+      .terminal {
+        max-width: 760px;
+      }
+
+      .route-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .topbar-inner {
+        min-height: 70px;
+      }
+
+      .brand-label small,
+      .system-state span {
+        display: none;
+      }
+
+      main {
+        padding-top: 40px;
+      }
+
+      .hero {
+        gap: 42px;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 16vw, 4.5rem);
+      }
+
+      .shortcut-line {
+        display: none;
+      }
+
+      .terminal {
+        box-shadow: 7px 7px 0 var(--cyan);
+      }
+
+      .terminal-screen {
+        min-height: 292px;
+        max-height: 292px;
+        padding: 18px;
+      }
+
+      .command-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .route-grid,
+      .system-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="/" aria-label="Ashhad Sameer command center home">
+        <img src="/assets/logo-mark.svg" width="46" height="46" alt="">
+        <span class="brand-label">
+          <span>Ashhad Sameer</span>
+          <small>Developer Command Center</small>
+        </span>
+      </a>
+      <div class="system-state" aria-label="System online">
+        <i class="pulse" aria-hidden="true"></i>
+        <span>System online</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Kuwait Software &amp; AI Developer</p>
+        <h1 id="hero-title">Ashhad Sameer. <span class="accent">Developer Command Center.</span></h1>
+        <p class="intro">
+          I am a Kuwait-based software and AI developer working across product engineering,
+          investment technology, full-stack web systems, automation, and practical AI.
+          Explore my portfolio, projects, and freelance development contact options.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="/dev/">Open portfolio <span aria-hidden="true">-&gt;</span></a>
+          <button class="button secondary" type="button" id="focus-terminal">Use command center</button>
+        </div>
+        <div class="shortcut-line" aria-label="Keyboard shortcuts">
+          <span><kbd>/</kbd> command</span>
+          <span><kbd>P</kbd> portfolio</span>
+          <span><kbd>G</kbd> GitHub</span>
+          <span><kbd>?</kbd> help</span>
+        </div>
+      </div>
+
+      <section class="terminal" aria-label="Interactive developer command center">
+        <div class="terminal-bar">
+          <div class="terminal-dots" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="terminal-title">ashhad@portfolio:~</span>
+        </div>
+        <div class="terminal-screen" id="terminal-output" aria-live="polite" aria-atomic="false">
+          <p class="success">AshhadOS 1.0 ready.</p>
+          <p class="muted">A compact interface to my work, experience, and profiles.</p>
+          <p class="info">Type "help" to list commands, or choose one below.</p>
+        </div>
+        <form class="command-row" id="command-form">
+          <label class="prompt" for="command">ashhad@portfolio:~$</label>
+          <input id="command" name="command" type="text" autocomplete="off" spellcheck="false" placeholder="help" aria-label="Enter a command">
+        </form>
+        <div class="command-menu" aria-label="Suggested commands">
+          <button class="command-chip" type="button" data-command="portfolio">portfolio</button>
+          <button class="command-chip" type="button" data-command="projects">projects</button>
+          <button class="command-chip" type="button" data-command="github">github</button>
+          <button class="command-chip" type="button" data-command="contact">contact</button>
+          <button class="command-chip" type="button" data-command="gold">gold</button>
+          <button class="command-chip" type="button" data-command="game">game</button>
+          <button class="command-chip" type="button" data-command="random">random</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="routes" aria-labelledby="routes-title">
+      <div class="section-head">
+        <h2 id="routes-title">Available routes</h2>
+        <p>No command line required.</p>
+      </div>
+      <div class="route-grid">
+        <a class="route-card primary-route" href="/dev/">
+          <span class="route-path"><span>/dev</span><span class="route-arrow">-&gt;</span></span>
+          <span>
+            <strong>Kuwait software developer portfolio</strong>
+            <small>Full-stack, AI, freelance development enquiries, experience, and technical leadership.</small>
+          </span>
+        </a>
+        <a class="route-card" href="https://github.com/AshhadS" target="_blank" rel="noreferrer">
+          <span class="route-path"><span>github://</span><span class="route-arrow">-&gt;</span></span>
+          <span>
+            <strong>Source and experiments</strong>
+            <small>Code, practical AI work, and full-stack side projects.</small>
+          </span>
+        </a>
+        <a class="route-card" href="https://www.linkedin.com/in/dev-ashhad/" target="_blank" rel="noreferrer">
+          <span class="route-path"><span>linkedin://</span><span class="route-arrow">-&gt;</span></span>
+          <span>
+            <strong>Professional profile</strong>
+            <small>Career updates, technical posts, and professional connections.</small>
+          </span>
+        </a>
+        <a class="route-card" href="mailto:ashhad.sameer56@gmail.com">
+          <span class="route-path"><span>mailto://</span><span class="route-arrow">-&gt;</span></span>
+          <span>
+            <strong>Start a conversation</strong>
+            <small>Discuss software engineering, technical leadership, or AI systems.</small>
+          </span>
+        </a>
+      </div>
+
+      <div class="system-strip" aria-label="Professional summary">
+        <div class="system-item">
+          <span>Local time</span>
+          <strong id="kuwait-time">Loading Kuwait time...</strong>
+        </div>
+        <div class="system-item">
+          <span>Experience</span>
+          <strong>10+ years building software</strong>
+        </div>
+        <div class="system-item">
+          <span>Current focus</span>
+          <strong>Product engineering + practical AI</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>Copyright <?php echo date('Y'); ?> Ashhad Sameer</span>
+      <span>Built on Oracle Cloud / Kuwait</span>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const output = document.querySelector("#terminal-output");
+      const form = document.querySelector("#command-form");
+      const input = document.querySelector("#command");
+      const focusButton = document.querySelector("#focus-terminal");
+      const clock = document.querySelector("#kuwait-time");
+      const history = [];
+      let historyIndex = 0;
+
+      const destinations = {
+        portfolio: "/dev/",
+        dev: "/dev/",
+        projects: "/dev/#projects",
+        experience: "/dev/#experience",
+        skills: "/dev/#skills",
+        github: "https://github.com/AshhadS",
+        linkedin: "https://www.linkedin.com/in/dev-ashhad/",
+        contact: "mailto:ashhad.sameer56@gmail.com",
+        email: "mailto:ashhad.sameer56@gmail.com",
+        gold: "/gold-rates/",
+      };
+
+      const randomProjects = [
+        "https://github.com/AshhadS/stock_agent",
+        "https://github.com/AshhadS/forum_app",
+        "https://github.com/AshhadS/forum-fe",
+        "https://github.com/AshhadS/PropertyManager",
+        "/dev/#projects"
+      ];
+
+      function print(message, type = "") {
+        const line = document.createElement("p");
+        line.textContent = message;
+        if (type) line.className = type;
+        output.appendChild(line);
+        output.scrollTop = output.scrollHeight;
+      }
+
+      function updateClock() {
+        const formatted = new Intl.DateTimeFormat("en-GB", {
+          timeZone: "Asia/Kuwait",
+          weekday: "short",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false
+        }).format(new Date());
+        clock.textContent = formatted + " KWT";
+      }
+
+      function navigate(command, destination) {
+        print("Opening " + command + "...", "success");
+        window.setTimeout(() => {
+          if (destination.startsWith("http")) {
+            window.open(destination, "_blank", "noopener,noreferrer");
+          } else {
+            window.location.href = destination;
+          }
+        }, 220);
+      }
+
+      function run(rawCommand) {
+        const command = rawCommand.trim().toLowerCase();
+        if (!command) return;
+
+        print("ashhad@portfolio:~$ " + command);
+        history.push(command);
+        historyIndex = history.length;
+
+        if (destinations[command]) {
+          navigate(command, destinations[command]);
+          return;
+        }
+
+        switch (command) {
+          case "help":
+          case "?":
+            print("Commands: portfolio, projects, experience, skills, github, linkedin, contact, random, status, time, whoami, game, gold, clear", "info");
+            break;
+          case "status":
+            print("System online. Portfolio route available. External profiles connected.", "success");
+            break;
+          case "time":
+            print(clock.textContent, "info");
+            break;
+          case "whoami":
+            print("Ashhad Sameer | Tech Lead Software Engineer | Kuwait", "success");
+            break;
+          case "random": {
+            const destination = randomProjects[Math.floor(Math.random() * randomProjects.length)];
+            navigate("a random project", destination);
+            break;
+          }
+          case "gold": {
+            navigate("kuwait gold rate analysis", destination);
+            break;
+          }
+          case "game": {
+            navigate("movie charades remix game", "https://ashhads.github.io/MovieGame/");
+            break;
+          }
+          case "clear":
+            output.replaceChildren();
+            break;
+          default:
+            print("Command not found: " + command + '. Type "help" for available commands.', "error");
+        }
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        run(input.value);
+        input.value = "";
+      });
+
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowUp" && history.length) {
+          event.preventDefault();
+          historyIndex = Math.max(0, historyIndex - 1);
+          input.value = history[historyIndex] || "";
+        }
+
+        if (event.key === "ArrowDown" && history.length) {
+          event.preventDefault();
+          historyIndex = Math.min(history.length, historyIndex + 1);
+          input.value = history[historyIndex] || "";
+        }
+      });
+
+      document.querySelectorAll("[data-command]").forEach((button) => {
+        button.addEventListener("click", () => run(button.dataset.command));
+      });
+
+      focusButton.addEventListener("click", () => {
+        input.focus();
+        document.querySelector(".terminal").scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+
+      document.addEventListener("keydown", (event) => {
+        const typing = event.target.matches("input, textarea, [contenteditable='true']");
+        if (typing) return;
+
+        if (event.key === "/") {
+          event.preventDefault();
+          input.focus();
+        } else if (event.key.toLowerCase() === "p") {
+          window.location.href = "/dev/";
+        } else if (event.key.toLowerCase() === "g") {
+          window.open("https://github.com/AshhadS", "_blank", "noopener,noreferrer");
+        } else if (event.key === "?") {
+          input.focus();
+          run("help");
+        }
+      });
+
+      updateClock();
+      window.setInterval(updateClock, 1000);
+    })();
+  </script>
+</body>
+</html>

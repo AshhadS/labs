@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>http://ashhadslabs.com/</loc>
+    <lastmod>2026-08-05</lastmod>
+  </url>
+  <url>
+    <loc>http://ashhadslabs.com/dev/</loc>
+    <lastmod>2026-08-05</lastmod>
+  </url>
+  <url>
+    <loc>http://ashhadslabs.com/gold-rates/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <image:image>
+      <image:loc>http://ashhadslabs.com/gold-rates/yearly-price.png</image:loc>
+      <image:title>Kuwait gold closing prices by year</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>http://ashhadslabs.com/gold-rates/monthly-change.png</image:loc>
+      <image:title>Kuwait gold price cumulative monthly change</image:title>
+    </image:image>
+  </url>
+</urlset>
