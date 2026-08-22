@@ -26,7 +26,7 @@ jobs:
 
       - name: Build static lab copy
         env:
-          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          SITE_URL: https://ashhadslabs.com
         run: node build-lab.mjs
 
       - name: Configure Pages
