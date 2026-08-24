@@ -1251,7 +1251,7 @@
     </main>
 
     <footer>
-      <div class="shell">Copyright 2026 Ashhad Sameer. This website is hosted by me on Oracle Cloud for free; reach out if you want to learn how.</div>
+      <div class="shell">Copyright 2026 Ashhad Sameer. This website is hosted by me on Github for free; reach out if you want to learn how.</div>
     </footer>
 
     <script>
