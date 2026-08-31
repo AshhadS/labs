@@ -844,7 +844,7 @@
           </div>
         </div>
 
-        side class="command-card" aria-label="Professional snapshot">
+        <aside class="command-card" aria-label="Professional snapshot">
           <div class="terminal-top">
             <span>lead-engineer.sh</span>
             <span class="dots" aria-hidden="true">
@@ -899,19 +899,19 @@
             </p>
           </div>
           <div class="value-grid">
-            rticle class="tile">
+            <article  class="tile">
               <h3>Tech Lead Thinking</h3>
               <p>I provide team leadership, mentoring, delivery ownership, task breakdown, and engineering decisions that stay close to business goals.</p>
             </article>
-            rticle class="tile">
+            <article  class="tile">
               <h3>Front-End Product Craft</h3>
               <p>I deliver React, Vue, Nuxt, Next, TypeScript, Pinia, Redux, Ionic, Tailwind, and responsive UI systems for real users.</p>
             </article>
-            rticle class="tile">
+            <article  class="tile">
               <h3>Full-Stack Grounding</h3>
               <p>I build and maintain Laravel, PHP, Node, Express, PostgreSQL, MongoDB, SQLite, Firebase, Supabase, and API integrations with .NET systems.</p>
             </article>
-            rticle class="tile">
+            <article  class="tile">
               <h3>AI Builder Mindset</h3>
               <p>I lead hands-on exploration LangChain, LangGraph, MCP, Ollama, Groq, ChromaDB, PGVector, and other agentic AI tools.</p>
             </article>
@@ -926,7 +926,7 @@
               I believe agentic applications are the future of software engineering, and there is so much untapped potential for businesses to expand on this. I'm studying systems that blend agent orchestration, intelligent retrieval, and adaptable stacks to drive AI adoption in enterprises.
             </p>
           </div>
-          side class="command-card dark" aria-label="Agentic applications snapshot">
+          <aside class="command-card dark" aria-label="Agentic applications snapshot">
             <div class="terminal-top dark">
               <span>agentic-stack.sh</span>
               <span class="dots" aria-hidden="true">
