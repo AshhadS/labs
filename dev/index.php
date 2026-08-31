@@ -823,7 +823,7 @@
       <section class="shell hero" aria-label="Hero">
         <div>
           <p class="eyebrow">Tech Lead &middot; Software &amp; AI Developer</p>
-          <h1><span class="hero-name">Ashhad Sameer</span> <br /> Digitizing business processes</h1>
+          <h1><span class="hero-name">Ashhad Sameer</span> <br /> Developer Turning Business Processes Into Digital Solutions</h1>
           <p class="lead">
             A Kuwait-based Tech Lead with 11 years of experience building full-stack solutions and leading teams across investment technology, telecommunications, and e-commerce. I build reliable web applications, AI integrations, automation, and practical digital products for organizations in Kuwait and beyond.
           </p>
