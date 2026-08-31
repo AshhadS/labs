@@ -697,6 +697,12 @@
         font-weight: 850;
       }
 
+      .hobby-link {
+        text-decoration: underline;
+        text-decoration-color: rgb(33 36 47);
+        text-decoration-thickness: 2px;
+      }
+
       .contact-band {
         padding: 64px 0;
         background: #20242f;
@@ -823,9 +829,9 @@
       <section class="shell hero" aria-label="Hero">
         <div>
           <p class="eyebrow">Tech Lead &middot; Software &amp; AI Developer</p>
-          <h1><span class="hero-name">Ashhad Sameer</span> <br /> Developer Turning Business Processes Into Digital Solutions</h1>
+          <h1><span class="hero-name">Ashhad Sameer</span> <br /> Developer Driving Digitization</h1>
           <p class="lead">
-            A Kuwait-based Tech Lead with 11 years of experience building full-stack solutions and leading teams across investment technology, telecommunications, and e-commerce. I build reliable web applications, AI integrations, automation, and practical digital products for organizations in Kuwait and beyond.
+            A Tech Lead with 11 years of experience building full-stack solutions and leading teams across investment technology, telecommunications, and e-commerce. I build reliable web applications, AI integrations, automation, and practical digital products for organizations in Kuwait and beyond.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#projects">Explore my work</a>
@@ -838,7 +844,7 @@
           </div>
         </div>
 
-        <aside class="command-card" aria-label="Professional snapshot">
+        side class="command-card" aria-label="Professional snapshot">
           <div class="terminal-top">
             <span>lead-engineer.sh</span>
             <span class="dots" aria-hidden="true">
@@ -866,16 +872,16 @@
             </div>
             <div class="mini-board">
               <div class="mini-card">
+                <strong>Lead</strong>
+                <span>Discover. Architect. Build</span>
+              </div>
+              <div class="mini-card">
                 <strong>11 Years</strong>
-                <span>building secure software that scales</span>
+                <span>Fintech, Telco, and E-commerce</span>
               </div>
               <div class="mini-card">
                 <strong>Full-Stack</strong>
                 <span>Worked on all technology layers</span>
-              </div>
-              <div class="mini-card">
-                <strong>Lead</strong>
-                <span>team, product, and delivery mindset</span>
               </div>
             </div>
           </div>
@@ -893,19 +899,19 @@
             </p>
           </div>
           <div class="value-grid">
-            <article class="tile">
+            rticle class="tile">
               <h3>Tech Lead Thinking</h3>
               <p>I provide team leadership, mentoring, delivery ownership, task breakdown, and engineering decisions that stay close to business goals.</p>
             </article>
-            <article class="tile">
+            rticle class="tile">
               <h3>Front-End Product Craft</h3>
               <p>I deliver React, Vue, Nuxt, Next, TypeScript, Pinia, Redux, Ionic, Tailwind, and responsive UI systems for real users.</p>
             </article>
-            <article class="tile">
+            rticle class="tile">
               <h3>Full-Stack Grounding</h3>
               <p>I build and maintain Laravel, PHP, Node, Express, PostgreSQL, MongoDB, SQLite, Firebase, Supabase, and API integrations with .NET systems.</p>
             </article>
-            <article class="tile">
+            rticle class="tile">
               <h3>AI Builder Mindset</h3>
               <p>I lead hands-on exploration LangChain, LangGraph, MCP, Ollama, Groq, ChromaDB, PGVector, and other agentic AI tools.</p>
             </article>
@@ -920,7 +926,7 @@
               I believe agentic applications are the future of software engineering, and there is so much untapped potential for businesses to expand on this. I'm studying systems that blend agent orchestration, intelligent retrieval, and adaptable stacks to drive AI adoption in enterprises.
             </p>
           </div>
-          <aside class="command-card dark" aria-label="Agentic applications snapshot">
+          side class="command-card dark" aria-label="Agentic applications snapshot">
             <div class="terminal-top dark">
               <span>agentic-stack.sh</span>
               <span class="dots" aria-hidden="true">
@@ -1222,13 +1228,13 @@
             <article class="leadership-box">
               <h3>Hobbies</h3>
               <p>
-                In my free time, I enjoy gaming, sports, and exploring new technologies. I believe that a well-rounded life outside of work contributes to creativity and problem-solving in software engineering.
+                I enjoy gaming, sports, and exploring new technologies. I believe that a well-rounded life outside of work contributes to creativity and problem-solving in software engineering.
               </p>
             </article>
             <ul class="interest-list" aria-label="Interests">
-              <li>Gaming: Apex Legends, COD, Sekiro, Dark Souls </li>
-              <li>F1, Chess </li>
-              <li>Padel, Cricket, Swimming, Table tennis, Rugby</li>
+              <li>Gaming: Sekiro, <a class='hobby-link' href="https://www.youtube.com/watch?v=mfIgwlbr-9E&list=PLNVeZja-8Vyl0FdyO8i1FufRP9sQceYeH"> Dark Souls</a>, Apex Legends, COD </li>
+              <li>Sports: Padel, Cricket, Swimming, Table tennis</li>
+              <li>Others: F1, Chess, Reading </li>
             </ul>
           </div>
         </div>
@@ -1251,7 +1257,7 @@
     </main>
 
     <footer>
-      <div class="shell">Copyright 2026 Ashhad Sameer. This website is hosted by me on Github for free; reach out if you want to learn how.</div>
+      <div class="shell">Copyright 2026 Ashhad Sameer. This website is hosted by me on Google cloud for free; reach out if you want to learn how.</div>
     </footer>
 
     <script>
