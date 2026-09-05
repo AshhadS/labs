@@ -464,11 +464,11 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
       padding: 8px;
     }
 
-    .lofi-embed iframe {
+    .lofi-embed audio {
       width: 100%;
       display: block;
-      border: 0;
-      border-radius: 7px;
+      height: 42px;
+      color-scheme: dark;
     }
 
     .routes {
@@ -793,14 +793,13 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
             </label>
           </div>
           <div class="lofi-embed">
-            <iframe
+            <audio
               id="lofi-player"
-              src="https://loficafe.net/embed/chilling?utm_source=embed&amp;utm_medium=iframe&amp;utm_campaign=station_embed"
-              height="75"
-              title="Chilling lo-fi station"
-              loading="lazy"
-              allow="autoplay"
-            ></iframe>
+              src="https://radio.loficafe.net/listen/chilling/radio.mp3"
+              aria-label="Chilling lo-fi station"
+              controls
+              preload="none"
+            ></audio>
           </div>
         </section>
       </div>
@@ -1016,9 +1015,10 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
         if (!lofiStations.has(station)) return;
 
         const stationName = stationSelect.selectedOptions[0].textContent;
-        lofiPlayer.title = stationName + " lo-fi station";
-        lofiPlayer.src = "https://loficafe.net/embed/" + station
-          + "?utm_source=embed&utm_medium=iframe&utm_campaign=station_embed";
+        lofiPlayer.setAttribute("aria-label", stationName + " lo-fi station");
+        lofiPlayer.src = "https://radio.loficafe.net/listen/" + station + "/radio.mp3";
+        lofiPlayer.load();
+        lofiPlayer.play().catch(() => {});
       });
 
       focusButton.addEventListener("click", () => {
