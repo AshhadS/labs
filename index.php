@@ -465,10 +465,119 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
     }
 
     .lofi-embed audio {
-      width: 100%;
+      display: none;
+    }
+
+    .lofi-controls {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px solid #303746;
+      border-radius: 7px;
+      background: var(--terminal);
+      color: #eef4f8;
+      padding: 9px 12px;
+    }
+
+    .lofi-icon-button {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid #465064;
+      border-radius: 50%;
+      background: #252c39;
+      color: #eef4f8;
+      cursor: pointer;
+      transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+    }
+
+    .lofi-icon-button:hover {
+      border-color: var(--cyan);
+      background: #303949;
+      transform: translateY(-1px);
+    }
+
+    .lofi-play {
+      width: 38px;
+      height: 38px;
+      border: 0;
+      background: var(--lime);
+      color: var(--ink);
+    }
+
+    .lofi-icon-button svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .lofi-play .pause-icon,
+    .lofi-play[data-playing="true"] .play-icon {
+      display: none;
+    }
+
+    .lofi-play[data-playing="true"] .pause-icon {
       display: block;
-      height: 42px;
-      color-scheme: dark;
+    }
+
+    .lofi-mute .muted-icon,
+    .lofi-mute[data-muted="true"] .volume-icon {
+      display: none;
+    }
+
+    .lofi-mute[data-muted="true"] .muted-icon {
+      display: block;
+    }
+
+    .lofi-track {
+      min-width: 0;
+      display: grid;
+      line-height: 1.2;
+    }
+
+    .lofi-track strong {
+      overflow: hidden;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.78rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .lofi-track small {
+      margin-top: 3px;
+      color: var(--terminal-muted);
+      font-size: 0.65rem;
+    }
+
+    .lofi-live {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--terminal-muted);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .lofi-live::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--coral);
+      box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.16);
+      content: "";
+    }
+
+    .lofi-volume {
+      width: 72px;
+      height: 4px;
+      accent-color: var(--lime);
+      cursor: pointer;
     }
 
     .routes {
@@ -670,6 +779,19 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
         max-width: 135px;
       }
 
+      .lofi-controls {
+        gap: 9px;
+        padding-inline: 9px;
+      }
+
+      .lofi-live {
+        display: none;
+      }
+
+      .lofi-volume {
+        width: 54px;
+      }
+
       .terminal-screen {
         min-height: 292px;
         max-height: 292px;
@@ -797,9 +919,24 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
               id="lofi-player"
               src="https://radio.loficafe.net/listen/chilling/radio.mp3"
               aria-label="Chilling lo-fi station"
-              controls
               preload="none"
             ></audio>
+            <div class="lofi-controls">
+              <button class="lofi-icon-button lofi-play" id="lofi-play" type="button" data-playing="false" aria-label="Play lo-fi radio">
+                <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+                <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"></path></svg>
+              </button>
+              <span class="lofi-track">
+                <strong id="lofi-track-name">Chilling radio</strong>
+                <small id="lofi-playback-status">Ready when you are</small>
+              </span>
+              <span class="lofi-live">LIVE</span>
+              <button class="lofi-icon-button lofi-mute" id="lofi-mute" type="button" data-muted="false" aria-label="Mute lo-fi radio">
+                <svg class="volume-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4.03v8.05A4.5 4.5 0 0 0 16.5 12zm-2.5-8.5v2.06a7 7 0 0 1 0 12.88v2.06a9 9 0 0 0 0-17z"></path></svg>
+                <svg class="muted-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3zm13.6 3 2.7-2.7-1.4-1.4-2.7 2.7-2.7-2.7-1.4 1.4 2.7 2.7-2.7 2.7 1.4 1.4 2.7-2.7 2.7 2.7 1.4-1.4z"></path></svg>
+              </button>
+              <input class="lofi-volume" id="lofi-volume" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Lo-fi radio volume">
+            </div>
           </div>
         </section>
       </div>
@@ -874,6 +1011,11 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
       const clock = document.querySelector("#kuwait-time");
       const stationSelect = document.querySelector("#lofi-station");
       const lofiPlayer = document.querySelector("#lofi-player");
+      const lofiPlayButton = document.querySelector("#lofi-play");
+      const lofiMuteButton = document.querySelector("#lofi-mute");
+      const lofiVolume = document.querySelector("#lofi-volume");
+      const lofiTrackName = document.querySelector("#lofi-track-name");
+      const lofiPlaybackStatus = document.querySelector("#lofi-playback-status");
       const history = [];
       let historyIndex = 0;
 
@@ -1010,12 +1152,63 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
         button.addEventListener("click", () => run(button.dataset.command));
       });
 
+      function updateLofiControls() {
+        const isPlaying = !lofiPlayer.paused;
+        lofiPlayButton.dataset.playing = String(isPlaying);
+        lofiPlayButton.setAttribute("aria-label", isPlaying ? "Pause lo-fi radio" : "Play lo-fi radio");
+        lofiMuteButton.dataset.muted = String(lofiPlayer.muted);
+        lofiMuteButton.setAttribute("aria-label", lofiPlayer.muted ? "Unmute lo-fi radio" : "Mute lo-fi radio");
+      }
+
+      lofiPlayButton.addEventListener("click", () => {
+        if (lofiPlayer.paused) {
+          lofiPlaybackStatus.textContent = "Connecting...";
+          lofiPlayer.play().catch(() => {
+            lofiPlaybackStatus.textContent = "Press play to try again";
+          });
+        } else {
+          lofiPlayer.pause();
+        }
+      });
+
+      lofiMuteButton.addEventListener("click", () => {
+        lofiPlayer.muted = !lofiPlayer.muted;
+        updateLofiControls();
+      });
+
+      lofiVolume.addEventListener("input", () => {
+        lofiPlayer.volume = Number(lofiVolume.value);
+        if (lofiPlayer.volume > 0) lofiPlayer.muted = false;
+        updateLofiControls();
+      });
+
+      lofiPlayer.addEventListener("play", () => {
+        lofiPlaybackStatus.textContent = "Streaming now";
+        updateLofiControls();
+      });
+
+      lofiPlayer.addEventListener("pause", () => {
+        lofiPlaybackStatus.textContent = "Paused";
+        updateLofiControls();
+      });
+
+      lofiPlayer.addEventListener("waiting", () => {
+        lofiPlaybackStatus.textContent = "Connecting...";
+      });
+
+      lofiPlayer.addEventListener("error", () => {
+        lofiPlaybackStatus.textContent = "Station unavailable";
+        updateLofiControls();
+      });
+
       stationSelect.addEventListener("change", () => {
         const station = stationSelect.value;
         if (!lofiStations.has(station)) return;
 
         const stationName = stationSelect.selectedOptions[0].textContent;
         lofiPlayer.setAttribute("aria-label", stationName + " lo-fi station");
+        lofiTrackName.textContent = stationName + " radio";
+        lofiPlaybackStatus.textContent = "Connecting...";
         lofiPlayer.src = "https://radio.loficafe.net/listen/" + station + "/radio.mp3";
         lofiPlayer.load();
         lofiPlayer.play().catch(() => {});
@@ -1027,7 +1220,7 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
       });
 
       document.addEventListener("keydown", (event) => {
-        const typing = event.target.matches("input, textarea, [contenteditable='true']");
+        const typing = event.target.matches("input, select, textarea, [contenteditable='true']");
         if (typing) return;
 
         if (event.key === "/") {
@@ -1043,6 +1236,8 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
         }
       });
 
+      lofiPlayer.volume = Number(lofiVolume.value);
+      updateLofiControls();
       updateClock();
       window.setInterval(updateClock, 1000);
     })();
