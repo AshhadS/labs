@@ -99,7 +99,8 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
     }
 
     button,
-    input {
+    input,
+    select {
       font: inherit;
     }
 
@@ -404,14 +405,18 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
       color: #ffffff;
     }
 
+    .command-stack {
+      min-width: 0;
+      display: grid;
+      gap: 18px;
+    }
+
     .lofi-widget {
-      grid-column: 1 / -1;
       overflow: hidden;
-      margin-top: -28px;
       border: 2px solid var(--ink);
       border-radius: 8px;
       background: var(--paper);
-      box-shadow: 8px 8px 0 var(--blue);
+      box-shadow: 6px 6px 0 var(--blue);
     }
 
     .lofi-header {
@@ -421,22 +426,42 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
       gap: 8px;
       border-bottom: 2px solid var(--ink);
       background: #eefcff;
-      padding: 0 16px;
+      padding: 7px 10px 7px 14px;
       color: var(--blue);
       font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
       font-size: 0.82rem;
       font-weight: 800;
     }
 
-    .lofi-header .status {
+    .lofi-station-control {
       margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       color: var(--muted);
-      font-size: 0.68rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    #lofi-station {
+      max-width: 155px;
+      border: 1px solid #aebcc8;
+      border-radius: 5px;
+      outline: 0;
+      background: var(--paper);
+      color: var(--ink);
+      padding: 5px 28px 5px 8px;
+      cursor: pointer;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.72rem;
+      font-weight: 750;
+      text-transform: none;
     }
 
     .lofi-embed {
       background: var(--paper);
-      padding: 10px;
+      padding: 8px;
     }
 
     .lofi-embed iframe {
@@ -589,14 +614,13 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
         max-width: 760px;
       }
 
-      .terminal {
+      .command-stack {
+        width: 100%;
         max-width: 760px;
       }
 
       .lofi-widget {
-        width: 100%;
-        max-width: 760px;
-        margin-top: 0;
+        width: calc(100% - 6px);
       }
 
       .route-grid {
@@ -636,6 +660,14 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
 
       .terminal {
         box-shadow: 7px 7px 0 var(--cyan);
+      }
+
+      .lofi-station-control > span {
+        display: none;
+      }
+
+      #lofi-station {
+        max-width: 135px;
       }
 
       .terminal-screen {
@@ -716,49 +748,62 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
         </div>
       </div>
 
-      <section class="terminal" aria-label="Interactive developer command center">
-        <div class="terminal-bar">
-          <div class="terminal-dots" aria-hidden="true">
-            <span></span><span></span><span></span>
+      <div class="command-stack">
+        <section class="terminal" aria-label="Interactive developer command center">
+          <div class="terminal-bar">
+            <div class="terminal-dots" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="terminal-title">ashhad@portfolio:~</span>
           </div>
-          <span class="terminal-title">ashhad@portfolio:~</span>
-        </div>
-        <div class="terminal-screen" id="terminal-output" aria-live="polite" aria-atomic="false">
-          <p class="success">AshhadOS 1.0 ready.</p>
-          <p class="muted">A compact interface to my work, experience, and profiles.</p>
-          <p class="info">Type "help" to list commands, or choose one below.</p>
-        </div>
-        <form class="command-row" id="command-form">
-          <label class="prompt" for="command">ashhad@portfolio:~$</label>
-          <input id="command" name="command" type="text" autocomplete="off" spellcheck="false" placeholder="help" aria-label="Enter a command">
-        </form>
-        <div class="command-menu" aria-label="Suggested commands">
-          <button class="command-chip" type="button" data-command="portfolio">portfolio</button>
-          <button class="command-chip" type="button" data-command="projects">projects</button>
-          <button class="command-chip" type="button" data-command="github">github</button>
-          <button class="command-chip" type="button" data-command="contact">contact</button>
-          <button class="command-chip" type="button" data-command="gold">gold</button>
-          <button class="command-chip" type="button" data-command="game">game</button>
-          <button class="command-chip" type="button" data-command="random">random</button>
-        </div>
-      </section>
+          <div class="terminal-screen" id="terminal-output" aria-live="polite" aria-atomic="false">
+            <p class="success">AshhadOS 1.0 ready.</p>
+            <p class="muted">A compact interface to my work, experience, and profiles.</p>
+            <p class="info">Type "help" to list commands, or choose one below.</p>
+          </div>
+          <form class="command-row" id="command-form">
+            <label class="prompt" for="command">ashhad@portfolio:~$</label>
+            <input id="command" name="command" type="text" autocomplete="off" spellcheck="false" placeholder="help" aria-label="Enter a command">
+          </form>
+          <div class="command-menu" aria-label="Suggested commands">
+            <button class="command-chip" type="button" data-command="portfolio">portfolio</button>
+            <button class="command-chip" type="button" data-command="projects">projects</button>
+            <button class="command-chip" type="button" data-command="github">github</button>
+            <button class="command-chip" type="button" data-command="contact">contact</button>
+            <button class="command-chip" type="button" data-command="gold">gold</button>
+            <button class="command-chip" type="button" data-command="game">game</button>
+            <button class="command-chip" type="button" data-command="random">random</button>
+          </div>
+        </section>
 
-      <section class="lofi-widget" aria-label="Lo-fi music player">
-        <div class="lofi-header">
-          <span aria-hidden="true">&#9835;</span>
-          <span>lofi-session.sh</span>
-          <span class="status">&#9679; LIVE</span>
-        </div>
-        <div class="lofi-embed">
-          <iframe
-            src="https://loficafe.net/embed/chilling?utm_source=embed&amp;utm_medium=iframe&amp;utm_campaign=station_embed"
-            height="75"
-            title="Lo-fi music player"
-            loading="lazy"
-            allow="autoplay"
-          ></iframe>
-        </div>
-      </section>
+        <section class="lofi-widget" aria-label="Lo-fi music player">
+          <div class="lofi-header">
+            <span aria-hidden="true">&#9835;</span>
+            <span>lofi-session.sh</span>
+            <label class="lofi-station-control" for="lofi-station">
+              <span>Station</span>
+              <select id="lofi-station" aria-label="Choose lo-fi station">
+                <option value="gaming">Gaming</option>
+                <option value="japanese-lofi">Japanese lo-fi</option>
+                <option value="chilling" selected>Chilling</option>
+                <option value="working">Working</option>
+                <option value="sleeping">Sleeping</option>
+                <option value="studying">Studying</option>
+              </select>
+            </label>
+          </div>
+          <div class="lofi-embed">
+            <iframe
+              id="lofi-player"
+              src="https://loficafe.net/embed/chilling?utm_source=embed&amp;utm_medium=iframe&amp;utm_campaign=station_embed"
+              height="75"
+              title="Chilling lo-fi station"
+              loading="lazy"
+              allow="autoplay"
+            ></iframe>
+          </div>
+        </section>
+      </div>
     </section>
 
     <section class="routes" aria-labelledby="routes-title">
@@ -828,8 +873,19 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
       const input = document.querySelector("#command");
       const focusButton = document.querySelector("#focus-terminal");
       const clock = document.querySelector("#kuwait-time");
+      const stationSelect = document.querySelector("#lofi-station");
+      const lofiPlayer = document.querySelector("#lofi-player");
       const history = [];
       let historyIndex = 0;
+
+      const lofiStations = new Set([
+        "gaming",
+        "japanese-lofi",
+        "chilling",
+        "working",
+        "sleeping",
+        "studying"
+      ]);
 
       const destinations = {
         portfolio: "/dev/",
@@ -953,6 +1009,16 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
 
       document.querySelectorAll("[data-command]").forEach((button) => {
         button.addEventListener("click", () => run(button.dataset.command));
+      });
+
+      stationSelect.addEventListener("change", () => {
+        const station = stationSelect.value;
+        if (!lofiStations.has(station)) return;
+
+        const stationName = stationSelect.selectedOptions[0].textContent;
+        lofiPlayer.title = stationName + " lo-fi station";
+        lofiPlayer.src = "https://loficafe.net/embed/" + station
+          + "?utm_source=embed&utm_medium=iframe&utm_campaign=station_embed";
       });
 
       focusButton.addEventListener("click", () => {
