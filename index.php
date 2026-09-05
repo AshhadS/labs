@@ -752,7 +752,7 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
   <footer>
     <div class="shell footer-inner">
       <span>Copyright <?php echo date('Y'); ?> Ashhad Sameer</span>
-      <span>Built on Oracle Cloud / Kuwait</span>
+      <span>Built on Google Cloud / Kuwait</span>
     </div>
   </footer>
 
