@@ -404,6 +404,48 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
       color: #ffffff;
     }
 
+    .lofi-widget {
+      grid-column: 1 / -1;
+      overflow: hidden;
+      margin-top: -28px;
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: 8px 8px 0 var(--blue);
+    }
+
+    .lofi-header {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 2px solid var(--ink);
+      background: #eefcff;
+      padding: 0 16px;
+      color: var(--blue);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .lofi-header .status {
+      margin-left: auto;
+      color: var(--muted);
+      font-size: 0.68rem;
+    }
+
+    .lofi-embed {
+      background: var(--paper);
+      padding: 10px;
+    }
+
+    .lofi-embed iframe {
+      width: 100%;
+      display: block;
+      border: 0;
+      border-radius: 7px;
+    }
+
     .routes {
       margin-top: 70px;
       padding-top: 34px;
@@ -551,6 +593,12 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
         max-width: 760px;
       }
 
+      .lofi-widget {
+        width: 100%;
+        max-width: 760px;
+        margin-top: 0;
+      }
+
       .route-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -692,6 +740,23 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
           <button class="command-chip" type="button" data-command="gold">gold</button>
           <button class="command-chip" type="button" data-command="game">game</button>
           <button class="command-chip" type="button" data-command="random">random</button>
+        </div>
+      </section>
+
+      <section class="lofi-widget" aria-label="Lo-fi music player">
+        <div class="lofi-header">
+          <span aria-hidden="true">&#9835;</span>
+          <span>lofi-session.sh</span>
+          <span class="status">&#9679; LIVE</span>
+        </div>
+        <div class="lofi-embed">
+          <iframe
+            src="https://loficafe.net/embed/chilling?utm_source=embed&amp;utm_medium=iframe&amp;utm_campaign=station_embed"
+            height="75"
+            title="Lo-fi music player"
+            loading="lazy"
+            allow="autoplay"
+          ></iframe>
         </div>
       </section>
     </section>

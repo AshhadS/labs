@@ -807,47 +807,6 @@
         }
       }
   
-	.lofi-widget {
-	    margin-top: 40px;
-	    border: 2px solid #20212b;
-	    border-radius: 10px;
-	    background: #fff;
-	    box-shadow: 8px 8px 0 #3737a0;
-	    overflow: hidden;
-	}
-
-	.lofi-header {
-	    height: 44px;
-	    padding: 0 16px;
-
-	    display: flex;
-	    align-items: center;
-	    gap: 8px;
-
-	    background: #eefcff;
-	    border-bottom: 2px solid #20212b;
-
-	    color: #17178f;
-	    font-weight: 800;
-	}
-
-	.lofi-header .status {
-	    margin-left: auto;
-	    font-size: 11px;
-	    color: #667085;
-	}
-
-	.lofi-embed {
-	    padding: 10px;
-	    background: #fff;
-	}
-
-	.lofi-embed iframe {
-	    display: block;
-	    width: 100%;
-	    border: 0;
-	    border-radius: 7px;
-	}
     </style>
   </head>
   <body>
@@ -931,17 +890,6 @@
 		  </div>
 		</aside>
 
-		<div class="lofi-widget">
-		  <div class="lofi-header">
-		    <span>♫</span>
-		    <span>lofi-session.sh</span>
-		    <span class="status">● LIVE</span>
-		  </div>
-
-		  <div class="lofi-embed">
-		    <iframe src="https://loficafe.net/embed/chilling?utm_source=embed&amp;utm_medium=iframe&amp;utm_campaign=station_embed" width="95%" height="75px" frameborder="0" style=""></iframe>
-		  </div>
-		</div>
 	</div>
       </section>
       
